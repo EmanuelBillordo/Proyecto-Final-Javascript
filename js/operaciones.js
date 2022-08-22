@@ -165,12 +165,12 @@ function Cotizacion(cantLogo, cantPapeleria, cantEmpaque, cantBranding) {
         totalIva = total + (total * iva);
 
 
-        console.log("\n\nCOTIZACIÓN FINAL\n\nLOGOS | Cantidad: " + cantLogo + " / Subtotal: " + resultadoLogos + " CLP" +
-            "\nCOMBOS DE PAPELERÍA | Cantidad: " + cantPapeleria + " / Subtotal: " + resultadoPapeleria + " CLP" +
-            "\nCOMBOS DE EMPAQUE | Cantidad: " + cantEmpaque + " / Subtotal: " + resultadoEmpaque + " CLP" +
-            "\nCOMBOS DE BRANDING | Cantidad: " + cantBranding + " / Subtotal: " + resultadoBranding + " CLP" +
-            "\n\nTOTAL: " + total + " CLP" +
-            "\nTOTAL + IVA (19%): " + totalIva + " CLP"); //+
+        console.log("\n\nCOTIZACIÓN FINAL\n\nLOGOS | Cantidad: " + cantLogo + " / Subtotal: " + resultadoLogos + " ARS" +
+            "\nCOMBOS DE PAPELERÍA | Cantidad: " + cantPapeleria + " / Subtotal: " + resultadoPapeleria + " ARS" +
+            "\nCOMBOS DE EMPAQUE | Cantidad: " + cantEmpaque + " / Subtotal: " + resultadoEmpaque + " ARS" +
+            "\nCOMBOS DE BRANDING | Cantidad: " + cantBranding + " / Subtotal: " + resultadoBranding + " ARS" +
+            "\n\nTOTAL: " + total + " ARS" +
+            "\nTOTAL + IVA (19%): " + totalIva + " ARS"); //+
         //"\n\nARREGLO RESUMEN DE CANTIDADES: " + arregloResumenCantidades());
 
     }
@@ -296,7 +296,7 @@ function recuperarJSON() {
     console.log("\n\nSOLICITANTE EN SESIÓN:");
     console.log("\n\Nombre: " + solicitanteJSON["nombre"] +
         "\nCorreo electrónico: " + solicitanteJSON["email"] +
-        "\nTotal + IVA: " + solicitanteJSON["total"] + " CLP\n");
+        "\nTotal + IVA: " + solicitanteJSON["total"] + " ARS\n");
 }
 
 //Mostrando un console con el sessionStorage codificado
@@ -344,12 +344,12 @@ function agregar() {
     elementoCotizacion.innerText = "Presupuesto Final";
     elementoNombre.innerText = "Nombre: " + nombre.value;
     elementoEmail.innerText = "Correo electrónico: " + email.value;
-    elementoLogo.innerText = "Logotipos: " + logo + " / " + resultadoLogos + " CLP";
-    elementoPapeleria.innerText = "Papelería: " + papeleria.toLowerCase() + " / " + resultadoPapeleria + " CLP";
-    elementoEmpaque.innerText = "Empaques: " + empaque.toLowerCase() + " / " + resultadoEmpaque + " CLP";
-    elementoBranding.innerText = "Branding: " + branding.toLowerCase() + " / " + resultadoBranding + " CLP";
-    elementoTotal.innerText = "TOTAL: " + total + " CLP";
-    elementoTotalIva.innerText = "TOTAL + IVA (19%): " + totalIva + " CLP";
+    elementoLogo.innerText = "Logotipos: " + logo + " / " + resultadoLogos + " ARS";
+    elementoPapeleria.innerText = "Papelería: " + papeleria.toLowerCase() + " / " + resultadoPapeleria + " ARS";
+    elementoEmpaque.innerText = "Empaques: " + empaque.toLowerCase() + " / " + resultadoEmpaque + " ARS";
+    elementoBranding.innerText = "Branding: " + branding.toLowerCase() + " / " + resultadoBranding + " ARS";
+    elementoTotal.innerText = "TOTAL: " + total + " ARS";
+    elementoTotalIva.innerText = "TOTAL + IVA (19%): " + totalIva + " ARS";
 
     // Construyo un div dentro del div presupuesto
     // Este div interno es para poder 
@@ -404,11 +404,11 @@ function calculos(cantidad, tipo, precio) {
     let resultado;
     if (cantidad == 1 || cantidad == 0) {
         resultado = cantidad * precio;
-        console.log("Cantidad de " + tipo + ": " + cantidad + " | Precio: " + resultado + " CLP");
+        console.log("Cantidad de " + tipo + ": " + cantidad + " | Precio: " + resultado + " ARS");
     }
     if (cantidad > 1) {
         resultado = cantidad * (precio * descuento);
-        console.log("Cantidad de " + tipo + ": " + cantidad + " | Precio: " + resultado + " CLP");
+        console.log("Cantidad de " + tipo + ": " + cantidad + " | Precio: " + resultado + " ARS");
     }
     return resultado;
 }
@@ -707,20 +707,20 @@ $(function () {
         console.log("JQUERY - Activo Ventana con Información de Precios")
         alert("LISTADO DE PRECIOS:\n\n" +
             "DISEÑO DE LOGOTIPO\n" +
-            "-1 Logotipo | Precio: " + precioLogo + " CLP\n" +
+            "-1 Logotipo | Precio: " + precioLogo + " ARS\n" +
             "Descuento del 10% para cantidades superiores a 1 logo\n\n" +
             "COMBOS DE PAPELERÍA:\n" +
-            "-25 hojas, 25 sobres, 25 tarjetas, 25 carpetas | Precio: 30000 CLP\n" +
-            "-50 hojas, 50 sobres, 50 tarjetas, 50 carpetas | Precio: 60000 CLP\n" +
-            "-100 hojas, 100 sobres, 100 tarjetas, 100 carpetas | Precio: 120000 CLP\n\n" +
+            "-25 hojas, 25 sobres, 25 tarjetas, 25 carpetas | Precio: 30000 ARS\n" +
+            "-50 hojas, 50 sobres, 50 tarjetas, 50 carpetas | Precio: 60000 ARS\n" +
+            "-100 hojas, 100 sobres, 100 tarjetas, 100 carpetas | Precio: 120000 ARS\n\n" +
             "COMBOS DE EMPAQUES:\n" +
-            "-25 cajas | Precio: 50000 CLP\n" +
-            "-50 cajas | Precio: 100000 CLP\n" +
-            "-100 cajas | Precio: 200000 CLP\n\n" +
+            "-25 cajas | Precio: 50000 ARS\n" +
+            "-50 cajas | Precio: 100000 ARS\n" +
+            "-100 cajas | Precio: 200000 ARS\n\n" +
             "COMBOS DE BRANDING:\n" +
-            "-10 gorras, 10 boligrafos, 10 libretas | Precio: 60000 CLP\n" +
-            "-20 gorras, 20 boligrafos, 20 libretas | Precio: 120000 CLP\n" +
-            "-30 gorras, 30 boligrafos, 30 libretas | Precio: 180000 CLP\n\n");
+            "-10 gorras, 10 boligrafos, 10 libretas | Precio: 60000 ARS\n" +
+            "-20 gorras, 20 boligrafos, 20 libretas | Precio: 120000 ARS\n" +
+            "-30 gorras, 30 boligrafos, 30 libretas | Precio: 180000 ARS\n\n");
 
         //Transición habia abajo al mostrar los componentes que se pueden solicitar
         $('#componentes').slideDown(2000, function () {
